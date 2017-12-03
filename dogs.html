@@ -77,7 +77,7 @@ class Scene extends THREE.Object3D {
 	this.add(this.tree)
 	    
 	  this.welcome = new Welcome ()
-   	 this.tree.position.set(0, 20, 0)
+   	 this.welcome.position.set(0, 20, 0)
     	this.add(this.welcome)
     }
 
@@ -161,7 +161,7 @@ class Welcome extends THREE.Object3D {
 
 		var loader = new THREE.FontLoader();
 
-		loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+		loader.load( 'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function ( font ) {
 
 		var geometry = new THREE.TextGeometry( 'Welcome to the dog park!', {
 				font: font,
