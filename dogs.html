@@ -109,7 +109,7 @@ class Background extends THREE.Object3D {
 	var background = new THREE.MeshLambertMaterial ({map: texture, overdraw: 0.5 })
 
 	var back = new THREE.Mesh (
-		new THREE.BoxGeometry (20, 20, 20), background)
+		new THREE.BoxGeometry (200, 200, 200), background)
 	back.position.set (0, 0, 0)
 	this.add(back)
 	}
