@@ -330,18 +330,25 @@ class Dog extends THREE.Object3D {
 class Tree extends THREE.Object3D {
     constructor () {
 	super()
-		var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
-		var brown = new THREE.MeshLambertMaterial ({ color: 0x663300})
+		//var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
+		
+		var leaves  =  new THREE.MeshLambertMaterial({
+          		 map: new THREE.TextureLoader().load("tree.jpg")
+       		})
+		var bark  =  new THREE.MeshLambertMaterial({
+          		 map: new THREE.TextureLoader().load("bark.jpg")
+       		})
+		//var brown = new THREE.MeshLambertMaterial ({ color: 0x663300})
 
 
 
 
-		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (2.6, 32, 32), green)
+		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (2.6, 32, 32), leaves)
 		leaves.position.set (0, 5 , 0)
 		this.add(leaves);
 
 		var trunk = new THREE.Mesh (
-		new THREE.BoxGeometry (2, 10, 2), brown)
+		new THREE.BoxGeometry (2, 10, 2), bark)
 		trunk.position.set (0, 1.5, 0)
 		this.add (trunk)
 
