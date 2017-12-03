@@ -67,7 +67,19 @@ class Scene extends THREE.Object3D {
 	this.dogs[2].position.set (5, -5, 3)
 	this.dogs[2].rotateY(100 * Math.PI/180)
 	this.add (this.dogs[2])
-
+	
+	for (var i = 2; i < 20; i++) {
+		this.dogs[i] = new Dog()
+		xPos = Math.floor(Math.random()*95) + 1; 
+		xPos *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+		zPos = Math.floor(Math.random()*45) + 1; 
+		zPos *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+		this.dogs[i].position.set (xPos, -5, zPos)
+		dogRotation= Math.floor(Math.random()* 360) + 1; 
+		this.dogs[i].rotation.set (0, dogRotation * Math.PI/180, 0)
+		this.add (this.dogs[i])
+	}
+	    
 	this.cat = new Cat ()
 	this.cat.position.set(0, -5, 3)
 	this.cat.rotateY(90 * Math.PI/180)
@@ -330,7 +342,6 @@ class Dog extends THREE.Object3D {
 class Tree extends THREE.Object3D {
     constructor () {
 	super()
-		//var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
 		
 		var leaves  =  new THREE.MeshLambertMaterial({
           		 map: new THREE.TextureLoader().load("tree.jpg")
@@ -338,12 +349,11 @@ class Tree extends THREE.Object3D {
 		var bark  =  new THREE.MeshLambertMaterial({
           		 map: new THREE.TextureLoader().load("bark.jpg")
        		})
-		//var brown = new THREE.MeshLambertMaterial ({ color: 0x663300})
 
 
 
 
-		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (2.6, 32, 32), leaves)
+		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (3, 32, 32), leaves)
 		leaves.position.set (0, 5 , 0)
 		this.add(leaves);
 
