@@ -42,7 +42,11 @@ animate = function () {
 class Scene extends THREE.Object3D {
     constructor () {
 	super()
-	    
+	
+	var xPos
+	var zPos
+	var dogRotation
+	
 	
 	this.background = new Background()
 	this.background.position.set(0, 46, 0)
