@@ -3,7 +3,7 @@
 <html>
 <head>
 
-<title>Comp 86 example: Robot, with animation and picking</title>
+<title>Welcome to the dog park</title>
 
 
 <script src="https://threejs.org/build/three.min.js"></script>
@@ -54,7 +54,7 @@ class Scene extends THREE.Object3D {
 	// First robot, position = WC origin to robot local origin
 	this.dogs[0] = new Dog ()
 	this.dogs[0].position.set (-7, -5, 2)
-	this.dogs[0].rotateY(100 * Math.PI/180)
+	this.dogs[0].rotateY(120 * Math.PI/180)
 	this.add (this.dogs[0])
 
 	// A second robot, different local origin
@@ -62,6 +62,11 @@ class Scene extends THREE.Object3D {
 	this.dogs[1].position.set (-15, -5, 1)
 	this.dogs[1].rotateY(90 * Math.PI/180)
 	this.add (this.dogs[1])
+	    
+	this.dogs[2] = new Dog ()
+	this.dogs[2].position.set (5, -5, 3)
+	this.dogs[2].rotateY(100 * Math.PI/180)
+	this.add (this.dogs[2])
 
 	this.cat = new Cat ()
 	this.cat.position.set(0, -5, 3)
@@ -73,12 +78,17 @@ class Scene extends THREE.Object3D {
 
 	// add a tree
 	this.tree = new Tree ()
-	this.tree.position.set(5, 0, 5)
+	this.tree.position.set(5, -5, 7)
 	this.add(this.tree)
 	    
-	  this.welcome = new Welcome ()
-   	 this.welcome.position.set(0, 20, 0)
-    	this.add(this.welcome)
+	this.tree2 = new Tree ()
+	this.tree2.position.set(-10, -5, -5)
+	this.add(this.tree2)
+	    
+	this.tree3 = new Tree ()
+	this.tree3.position.set(-20, -5, 4)
+	this.add(this.tree3)
+
     }
 
     /*
@@ -155,36 +165,7 @@ class Background extends THREE.Object3D {
 
 }
 
-class Welcome extends THREE.Object3D {
-	constructor () {
-		super()
-
-		var loader = new THREE.FontLoader();
-
-		loader.load( 'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function ( font ) {
-
-		var geometry = new THREE.TextGeometry( 'Welcome to the dog park!', {
-				font: font,
-				size: 80,
-				height: 5,
-				curveSegments: 12,
-				bevelEnabled: true,
-				bevelThickness: 10,
-				bevelSize: 8,
-				bevelSegments: 5
-			} );
-			
-			var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
-			var mesh = new THREE.Mesh(geometry, green)
-			this.add(mesh)
-		} );
-
-		
-	}
-
-
-
-}	
+	
 	
 /*
  * We make a Robot out of other library objects
