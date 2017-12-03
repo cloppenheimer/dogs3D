@@ -110,6 +110,7 @@ class Background extends THREE.Object3D {
 
 	var back = new THREE.Mesh (
 		new THREE.BoxGeometry (200, 200, 200), background)
+	back.side = THREE.backside
 	back.position.set (0, 0, 0)
 	this.add(back)
 	}
