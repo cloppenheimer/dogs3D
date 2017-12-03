@@ -139,11 +139,13 @@ class Background extends THREE.Object3D {
 	  	else
 	  		materials[i] = sky
 		
+		materials[i].side = THREE.BackSide
+		
 	}
 		var geometry = new THREE.BoxGeometry(200, 100, 100, 1, 1, 1, materials)
 
 		var back = new THREE.Mesh (geometry, new THREE.MeshFaceMaterial())
-		materials.side = THREE.BackSide;
+		//materials.side = THREE.BackSide;
 		back.position.set (0, 0, 0)
 		this.add(back)
 	}
