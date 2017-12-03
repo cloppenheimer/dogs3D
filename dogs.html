@@ -58,12 +58,13 @@ class Scene extends THREE.Object3D {
 
 	// A second robot, different local origin
 	this.dogs[1] = new Dog ()
-	this.dogs[1].position.set (-5, -5, -20)
+	this.dogs[1].position.set (-5, -5, 1)
 	this.dogs[1].rotation.set (0, -20 * Math.PI/180, 0)
 	this.add (this.dogs[1])
 
 	this.cat = new Cat ()
 	this.cat.position.set(0, -5, 3)
+	this.cat.rotateY(90 * Math.PI/180)
 	this.add(this.cat)
 
 	this.xSpeed = 1
