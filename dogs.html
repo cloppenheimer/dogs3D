@@ -75,6 +75,10 @@ class Scene extends THREE.Object3D {
 	this.tree = new Tree ()
 	this.tree.position.set(5, 0, 5)
 	this.add(this.tree)
+	    
+	  this.welcome = new Welcome ()
+   	 this.tree.position.set(0, 20, 0)
+    	this.add(this.welcome)
     }
 
     /*
@@ -151,6 +155,34 @@ class Background extends THREE.Object3D {
 
 }
 
+class Welcome extends THREE.Object3D {
+	constructor () {
+		super()
+
+		var loader = new THREE.FontLoader();
+
+		loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+
+		var geometry = new THREE.TextGeometry( 'Welcome to the dog park!', {
+				font: font,
+				size: 80,
+				height: 5,
+				curveSegments: 12,
+				bevelEnabled: true,
+				bevelThickness: 10,
+				bevelSize: 8,
+				bevelSegments: 5
+			} );
+		} );
+
+		var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
+		var mesh = new Three.Mesh(geometry, green)
+	}
+
+
+
+}	
+	
 /*
  * We make a Robot out of other library objects
  */
