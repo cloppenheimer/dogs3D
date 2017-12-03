@@ -123,6 +123,9 @@ class Background extends THREE.Object3D {
 	  	else
 	  		geometry.faces[i].color = blue;
 	  }*/
+		
+	var geometry = new THREE.BoxGeometry(200, 100, 100)
+		
 	var grass =  new THREE.MeshLambertMaterial({
            map: THREE.ImageUtils.loadTexture('grass.jpg')
        })
