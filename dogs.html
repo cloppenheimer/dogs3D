@@ -106,7 +106,7 @@ class Scene extends THREE.Object3D {
 class Background extends THREE.Object3D {
 	constructor () {
 	super()
-	var material = new THREE.MeshBasicMaterial({
+	/*var material = new THREE.MeshBasicMaterial({
     		color: 0xffffff,
     		vertexColors: THREE.FaceColors
   		});
@@ -122,7 +122,21 @@ class Background extends THREE.Object3D {
 	  		geometry.faces[i].color = green
 	  	else
 	  		geometry.faces[i].color = blue;
-	  }
+	  }*/
+	var grass =  new THREE.MeshLambertMaterial({
+           map: THREE.ImageUtils.loadTexture('grass.jpg')
+       })
+	var sky =  new THREE.MeshLambertMaterial({
+           map: THREE.ImageUtils.loadTexture('sky.jpg')
+       })
+	var materials = []
+	for (int i = 0; i < geometry.faces.length; i++) {
+		if (i == 6 || i == 7)
+	  		materials[i] = grass
+	  	else
+	  		materials[i] = sky
+		
+	}
 
 
 		var back = new THREE.Mesh (geometry, material)
