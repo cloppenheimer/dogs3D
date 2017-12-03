@@ -3,7 +3,7 @@
 <html>
 <head>
 
-<title>Comp 86 example: Robot, with animation and picking</title>
+<title> Dog park </title>
 
 
 <script src="https://threejs.org/build/three.min.js"></script>
@@ -110,9 +110,9 @@ class Dog extends THREE.Object3D {
 	 */
 	var pants = new THREE.MeshLambertMaterial ({ color: 0x994c00 })
 	
-	//var texture = new THREE.TextureLoader().load("dalmation.jpg")
-	var shirt = new THREE.MeshLambertMaterial ({ color: 0x994c00 })
-	//var shirt = new THREE.MeshLambertMaterial ({map: texture, overdraw: 0.5 })
+	var texture = new THREE.TextureLoader().load("dalmation.jpg")
+	//var shirt = new THREE.MeshLambertMaterial ({ color: 0x994c00 })
+	var shirt = new THREE.MeshLambertMaterial ({map: texture, overdraw: 0.5 })
 
 	
 	var skin = new THREE.MeshLambertMaterial ({ color: 0x994c00, shininess: 60 })
