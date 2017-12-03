@@ -43,8 +43,9 @@ class Scene extends THREE.Object3D {
     constructor () {
 	super()
 	    
+	
 	this.background = new Background()
-	this.background.position.set(0, 10, -20)
+	this.background.position.set(0, 45, 0)
 	this.add(this.background)
 
 	// Keep our robots in a list so timer can access
@@ -105,14 +106,29 @@ class Scene extends THREE.Object3D {
 class Background extends THREE.Object3D {
 	constructor () {
 	super()
-	var texture = new THREE.TextureLoader().load("background.png")
-	var background = new THREE.MeshLambertMaterial ({map: texture, overdraw: 0.5 })
+	var material = new THREE.MeshBasicMaterial({
+    		color: 0xffffff,
+    		vertexColors: THREE.FaceColors
+  		});
 
-	var back = new THREE.Mesh (
-		new THREE.PlaneGeometry (100, 50, 0), background)
-	back.side = THREE.backside
-	back.position.set (0, 0, 0)
-	this.add(back)
+  		var geometry = new THREE.BoxGeometry(200, 100, 100);
+
+	  // colors
+	  var green = new THREE.Color(0x66CC00);
+	  var blue = new THREE.Color(0x66b2ff);
+	  
+	  for (var i = 0; i < geometry.faces.length; i++) {
+	  	if (i == 6 || i == 7)
+	  		geometry.faces[i].color = green
+	  	else
+	  		geometry.faces[i].color = blue;
+	  }
+
+
+		var back = new THREE.Mesh (geometry, material)
+		material.side = THREE.BackSide;
+		back.position.set (0, 0, 0)
+		this.add(back)
 	}
 
 }
