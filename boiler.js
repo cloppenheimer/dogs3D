@@ -18,7 +18,7 @@ window.onload = function () {
 
 	// Put a camera into the scene
 	camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
-	camera.position.set(0, 0, 20);
+	camera.position.set(0, 5, 20);
 	scene.add(camera);
 
 	// Create a camera contol
