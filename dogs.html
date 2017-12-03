@@ -127,10 +127,10 @@ class Background extends THREE.Object3D {
 	var geometry = new THREE.BoxGeometry(200, 100, 100)
 		
 	var grass =  new THREE.MeshLambertMaterial({
-           map: THREE.ImageUtils.loadTexture('grass.jpg')
+           map: new THREE.TextureLoader().load("grass.jpg")
        })
 	var sky =  new THREE.MeshLambertMaterial({
-           map: THREE.ImageUtils.loadTexture('sky.jpg')
+           map: new THREE.TextureLoader().load("sky.jpg")
        })
 	var materials = []
 	for (var i = 0; i < geometry.faces.length; i++) {
