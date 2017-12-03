@@ -173,10 +173,12 @@ class Welcome extends THREE.Object3D {
 				bevelSize: 8,
 				bevelSegments: 5
 			} );
+			
+			var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
+			var mesh = new THREE.Mesh(geometry, green)
 		} );
 
-		var green = new THREE.MeshLambertMaterial ({ color: 0x4c9900})
-		var mesh = new THREE.Mesh(geometry, green)
+		
 	}
 
 
