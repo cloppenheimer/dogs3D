@@ -124,14 +124,14 @@ class Background extends THREE.Object3D {
 	  		geometry.faces[i].color = blue;
 	  }*/
 		
-	
-		
-	var grass =  new THREE.MeshLambertMaterial({
-           map: new THREE.TextureLoader().load("grass.jpg")
-       })
+	console.log("heyy");
 	var sky =  new THREE.MeshLambertMaterial({
            map: new THREE.TextureLoader().load("sky.jpg")
        })
+	var grass =  new THREE.MeshLambertMaterial({
+           map: new THREE.TextureLoader().load("grass.jpg")
+       })
+	
 	var materials = []
 	for (var i = 0; i < 12; i++) {
 	  	materials[i] = sky
