@@ -45,7 +45,7 @@ class Scene extends THREE.Object3D {
 	    
 	
 	this.background = new Background()
-	this.background.position.set(0, 45, 0)
+	this.background.position.set(0, 46, 0)
 	this.add(this.background)
 
 	// Keep our robots in a list so timer can access
@@ -336,7 +336,7 @@ class Tree extends THREE.Object3D {
 
 
 
-		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (2.3, 32, 32), green)
+		var leaves = new THREE.Mesh ( new THREE.SphereGeometry (2.6, 32, 32), green)
 		leaves.position.set (0, 5 , 0)
 		this.add(leaves);
 
