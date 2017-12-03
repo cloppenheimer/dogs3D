@@ -77,17 +77,18 @@ class Scene extends THREE.Object3D {
 	this.zSpeed = 1
 
 	// add a tree
-	this.tree = new Tree ()
-	this.tree.position.set(5, -5, 7)
-	this.add(this.tree)
-	    
-	this.tree2 = new Tree ()
-	this.tree2.position.set(-10, -5, -5)
-	this.add(this.tree2)
-	    
-	this.tree3 = new Tree ()
-	this.tree3.position.set(-20, -5, 4)
-	this.add(this.tree3)
+	this.trees = []
+	var xPos
+	var zPos
+	for (var i = 0; i < 25; i++) {
+		this.trees[i] = new Tree()
+		xPos = Math.floor(Math.random()*95) + 1; 
+		xPos *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+		zPos = Math.floor(Math.random()*45) + 1; 
+		zPos *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+		this.trees[i].position.set(xPos, 0, zPos)
+		this.add(this.trees[i])
+	}
 
     }
 
